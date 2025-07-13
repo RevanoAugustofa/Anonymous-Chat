@@ -90,32 +90,37 @@ return (
 );
 };
 
-const FeatureCard = ({ title, desc, icon }) => (
-<div
-  className="flex flex-col gap-2 p-4 bg-[#172736] border border-[#2e4e6b] rounded-lg transition-all duration-300 active:scale-95 active:shadow-inner active:bg-[#1e3347]">
-  <div className="text-white">{icon}</div>
-  <h2 className="font-bold text-base">{title}</h2>
-  <p className="text-[#8daece] text-sm">{desc}</p>
-</div>
-);
+const FeatureCard = ({ title, desc, icon, link }) => {
+  const content = (
+    <div className="flex flex-col gap-2 p-4 bg-[#172736] border border-[#2e4e6b] rounded-lg transition-all duration-300 active:scale-95 active:shadow-inner active:bg-[#1e3347]">
+      <div className="text-white">{icon}</div>
+      <h2 className="font-bold text-base">{title}</h2>
+      <p className="text-[#8daece] text-sm">{desc}</p>
+    </div>
+  );
+
+  return link ? <Link to={link}>{content}</Link> : content;
+};
 
 const features = [
-{
-title: "Complete Anonymity",
-desc: "Your identity is always protected. Send and receive messages without revealing your personal information.",
-icon: <i class="ri-shield-check-line text-2xl"></i>
-},
-{
-title: "Connect with Anyone",
-desc: "Reach out to friends, colleagues, or anyone you want to communicate with, all while maintaining your privacy.",
-icon: <i class="ri-group-line text-2xl"></i>
-},
-{
-title: "Secure Messaging",
-desc: "Our platform uses advanced encryption to keep your messages secure and confidential.",
-icon: <i class="ri-lock-2-line text-2xl"></i>
-}
+  {
+    title: "Complete Anonymity",
+    desc: "Your identity is always protected. Send and receive messages without revealing your personal information.",
+    icon: <i className="ri-shield-check-line text-2xl"></i>
+  },
+  {
+    title: "Connect with Anyone",
+    desc: "Reach out to friends, colleagues, or anyone you want to communicate with, all while maintaining your privacy.",
+    icon: <i className="ri-group-line text-2xl"></i>
+  },
+  {
+    title: "Secure Messaging",
+    desc: "Our platform uses advanced encryption to keep your messages secure and confidential.",
+    icon: <i className="ri-lock-2-line text-2xl"></i>,
+    link: "Home_page"
+  }
 ];
+
 
 const socialLinks = [
 {

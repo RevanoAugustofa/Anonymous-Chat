@@ -8,6 +8,7 @@ import Settings from './pages/Settings'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import HomePage from './pages/Home_page'
+import CreateMessage from './pages/create_message'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -20,6 +21,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/home_page" element={<HomePage />} />
+        <Route path="/create_message" element={<CreateMessage />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
